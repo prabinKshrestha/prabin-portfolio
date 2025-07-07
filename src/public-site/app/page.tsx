@@ -36,10 +36,9 @@ export default function Home() {
 					<p>St. John&rsquo;s, NL, Canada</p>
 				</div>
 
-				{/* Show designation if it's notable */}
 				<div className="space-y-1">
-					<p className="text-gray-500 uppercase text-xs tracking-wide">Designation</p>
-					<p>Software Engineer</p>
+					<p className="text-gray-500 uppercase text-xs tracking-wide">Education</p>
+					<p>MASc in Software Engineering, MUN</p>
 				</div>
 
 				<div className="space-y-2 mt-4">
