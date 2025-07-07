@@ -44,6 +44,8 @@ jobs:
           action: "upload"
           app_location: "./src/public-site"
           output_location: "out" # This is the default output of `next export`
+        env: # Add environment variables here
+          IS_STATIC_EXPORT: true
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
