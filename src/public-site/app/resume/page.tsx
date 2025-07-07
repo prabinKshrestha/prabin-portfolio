@@ -11,7 +11,7 @@ export default function Resume() {
 				href="/"
 				className="inline-block bg-primary hover:bg-primary-dark text-white font-semibold px-6 py-3 rounded-md transition"
 			>
-				Home
+				Take me Home
 			</Link>
 		</div>
 	);

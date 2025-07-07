@@ -40,7 +40,7 @@ export default function RootLayout({
                             height={36}
                             className="h-9 w-9 rounded-full object-cover"
                         />
-                        <span className="text-xl font-medium tracking-tight">prabinkshrestha</span>
+                        <span className="text-xl font-medium tracking-tight">prabinKshrestha</span>
                     </Link>
                     <nav className="flex items-center space-x-8">
                         <Link
@@ -48,6 +48,12 @@ export default function RootLayout({
                             className="text-base font-medium hover:text-primary transition-colors cursor-pointer"
                         >
                             Resume
+                        </Link>
+                        <Link
+                            href={'/projects'}
+                            className="text-base font-medium hover:text-primary transition-colors cursor-pointer"
+                        >
+                            Projects
                         </Link>
                         <Link
                             href={'/blogs'}
