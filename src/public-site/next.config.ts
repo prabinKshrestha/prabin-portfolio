@@ -2,7 +2,8 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    domains: ["media.licdn.com"],
+    unoptimized: true,
+    domains: ["media.licdn.com"]
   },
   output: 'export',
 };
