@@ -33,7 +33,7 @@ export default function Home() {
 
 				<div className="space-y-1">
 					<p className="text-gray-500 uppercase text-xs tracking-wide">Location</p>
-					<p>St. John's, NL, Canada</p>
+					<p>St. John&rsquo;s, NL, Canada</p>
 				</div>
 
 				{/* Show designation if it's notable */}
