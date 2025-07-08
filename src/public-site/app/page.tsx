@@ -20,7 +20,7 @@ export default function Home() {
 				</Link>
 			</div>
 
-			<div className="flex flex-col justify-center gap-6 text-sm md:text-base text-gray-700 md:min-w-[350px]">
+			<div className="flex flex-col justify-center gap-6 text-sm md:text-base text-gray-700 md:min-w-[300px]">
 				<div className="space-y-1">
 					<p className="text-gray-500 uppercase text-xs tracking-wide">Currently</p>
 					<p>
