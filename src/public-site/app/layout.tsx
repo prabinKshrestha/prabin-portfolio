@@ -26,7 +26,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body
-                className={`${poppins.variable}  antialiased flex flex-col h-screen m-0 p-0`}
+                className={`${poppins.variable}  antialiased flex flex-col h-screen m-0 mx-auto p-0 max-w-[90rem]`}
             >
                 <header className="flex items-center justify-between px-8 py-6">
                     <Link
@@ -71,7 +71,7 @@ export default function RootLayout({
                         </Link>
                     </nav>
                 </header>
-                <main className="p-10 flex-1">
+                <main className="p-8 flex-1">
                     {children}
                 </main>
             </body>

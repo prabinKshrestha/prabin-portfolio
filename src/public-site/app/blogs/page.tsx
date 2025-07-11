@@ -31,7 +31,7 @@ const blogs: BlogPost[] = [
 		id: "2",
 		title: "Docker Compose Won’t Build: Troubleshooting Guide",
 		slug: "docker-compose-fail",
-		summary: "Diagnosing subtle YAML formatting errors in multi-service setups.",
+		summary: "Diagnosing subtle YAML formatting errors in multi-service setups. Diagnosing subtle YAML formatting errors in multi-service setups. Diagnosing subtle YAML formatting errors in multi-service setups.Diagnosing subtle YAML formatting errors in multi-service setups.Diagnosing subtle YAML formatting errors in multi-service setups.",
 		publishedAt: "2025-06-01",
 		updatedAt: "2025-06-15",
 	},
@@ -64,21 +64,20 @@ const blogs: BlogPost[] = [
 
 export default function BlogsPage() {
 	return (
-		<div className="max-w-7xl mx-auto px-6 py-16 text-gray-800">
+		<div className="max-w-7xl mx-auto py-16">
 			{/* Page Header */}
 			<div className="mb-20">
-				<h1 className="text-5xl font-bold text-center mb-8">View My Blogs</h1>
+				<h1 className="text-4xl font-bold text-center mb-8">View My Blogs</h1>
 				<div className="flex justify-center">
 					<input
 						type="text"
 						placeholder="Search bugs, topics, titles..."
-						className="w-full md:w-1/2 px-4 py-2 border border-gray-400 rounded-md focus:outline-none focus:ring focus:border-primary"
+						className="w-full md:w-2/3 px-4 py-2 border border-gray-400 rounded-md focus:outline-none focus:ring focus:border-primary"
 					/>
 				</div>
 			</div>
 
 			{/* Main Grid */}
-			{/* Blog List (2/3 width) */}
 			<div className="max-w-4xl flex flex-col justify-center mx-auto">
 				{blogs.map((post, index) => (
 					<div
@@ -91,7 +90,7 @@ export default function BlogsPage() {
 							</Link>
 						</h2>
 						<div className="text-xs text-gray-500 mb-4">
-							Published: {new Date(post.publishedAt).toLocaleDateString()} | Updated:{" "}
+							Published: {new Date(post.publishedAt).toLocaleDateString()} ○ Updated:{" "}
 							{new Date(post.updatedAt).toLocaleDateString()}
 						</div>
 						<p className="text-sm text-gray-600">{post.summary}</p>

@@ -2,12 +2,12 @@ import Link from "next/link";
 
 export default function Home() {
 	return (
-		<div className="h-full flex flex-1 gap-48 flex-col md:flex-row px-18 py-12">
-			<div className="flex flex-col items-center justify-center flex-1 gap-10">
-				<h1 className="text-4xl md:text-6xl font-extrabold text-center capitalize">
-					Hey, I&rsquo;m Prabin Kumar Shrestha
+		<div className="h-full flex flex-1 gap-56 flex-col md:flex-row py-12">
+			<div className="flex-1 flex flex-col items-center justify-center gap-14">
+				<h1 className="text-4xl md:text-6xl font-extrabold text-center capitalize tracking-wider leading-snug">
+					Hey, I&rsquo;m <br/> Prabin Kumar Shrestha
 				</h1>
-				<p className="text-lg md:text-xl text-gray-600 max-w-3xl text-center">
+				<p className="text-lg md:text-xl text-gray-600 max-w-3xl text-center tracking-wide">
 					I am a dedicated Software Engineer with a profound passion for the latest technology. My commitment to continuous learning drives my enthusiasm for overcoming challenges, and I strongly believe in sharing knowledge for community growth.
 				</p>
 				<Link href="https://github.com/prabinkshrestha" target="blank" className="mt-10">
@@ -20,7 +20,7 @@ export default function Home() {
 				</Link>
 			</div>
 
-			<div className="flex flex-col justify-center gap-6 text-sm md:text-base text-gray-700 md:min-w-[300px]">
+			<div className="flex flex-col justify-center gap-6 text-sm md:text-base text-gray-700">
 				<div className="space-y-1">
 					<p className="text-gray-500 uppercase text-xs tracking-wide">Currently</p>
 					<p>
@@ -32,13 +32,13 @@ export default function Home() {
 				</div>
 
 				<div className="space-y-1">
-					<p className="text-gray-500 uppercase text-xs tracking-wide">Location</p>
-					<p>St. John&rsquo;s, NL, Canada</p>
+					<p className="text-gray-500 uppercase text-xs tracking-wide">Education</p>
+					<p>MASc in Software Engineering, MUN</p>
 				</div>
 
 				<div className="space-y-1">
-					<p className="text-gray-500 uppercase text-xs tracking-wide">Education</p>
-					<p>MASc in Software Engineering, MUN</p>
+					<p className="text-gray-500 uppercase text-xs tracking-wide">Address</p>
+					<p>St. John&rsquo;s, NL, Canada</p>
 				</div>
 
 				<div className="space-y-2 mt-4">
