@@ -1,4 +1,3 @@
-// app/blogs/page.tsx (or pages/blogs.tsx)
 import Link from "next/link";
 
 type BlogPost = {
@@ -13,53 +12,12 @@ type BlogPost = {
 const blogs: BlogPost[] = [
 	{
 		id: "1",
-		title: "Fixing a Persistent React Re-render Bug",
-		slug: "react-rerender-bug",
-		summary: "How I solved a sneaky performance issue caused by unstable props.",
-		publishedAt: "2025-06-12",
-		updatedAt: "2025-06-18",
+		title: "How to write clean code? Notes on book - Clean Code",
+		slug: "clean-code",
+		summary: "I studied the book by Uncle Bob 'Clean Code: A Handbook of Agile Software Craftsmanship'. It has the short summarized notes on how to write clean code in chapters. It helped me to write a good code and understood that code should be understandable by readers.",
+		publishedAt: "2025-07-10",
+		updatedAt: "2025-07-10",
 	},
-	{
-		id: "2",
-		title: "Docker Compose Won’t Build: Troubleshooting Guide",
-		slug: "docker-compose-fail",
-		summary: "Diagnosing subtle YAML formatting errors in multi-service setups.",
-		publishedAt: "2025-06-01",
-		updatedAt: "2025-06-15",
-	},
-	{
-		id: "2",
-		title: "Docker Compose Won’t Build: Troubleshooting Guide",
-		slug: "docker-compose-fail",
-		summary: "Diagnosing subtle YAML formatting errors in multi-service setups. Diagnosing subtle YAML formatting errors in multi-service setups. Diagnosing subtle YAML formatting errors in multi-service setups.Diagnosing subtle YAML formatting errors in multi-service setups.Diagnosing subtle YAML formatting errors in multi-service setups.",
-		publishedAt: "2025-06-01",
-		updatedAt: "2025-06-15",
-	},
-	{
-		id: "2",
-		title: "Docker Compose Won’t Build: Troubleshooting Guide",
-		slug: "docker-compose-fail",
-		summary: "Diagnosing subtle YAML formatting errors in multi-service setups.",
-		publishedAt: "2025-06-01",
-		updatedAt: "2025-06-15",
-	},
-	{
-		id: "2",
-		title: "Docker Compose Won’t Build: Troubleshooting Guide",
-		slug: "docker-compose-fail",
-		summary: "Diagnosing subtle YAML formatting errors in multi-service setups.",
-		publishedAt: "2025-06-01",
-		updatedAt: "2025-06-15",
-	},
-	{
-		id: "2",
-		title: "Docker Compose Won’t Build: Troubleshooting Guide",
-		slug: "docker-compose-fail",
-		summary: "Diagnosing subtle YAML formatting errors in multi-service setups.",
-		publishedAt: "2025-06-01",
-		updatedAt: "2025-06-15",
-	},
-	// Add more entries here...
 ];
 
 export default function BlogsPage() {
@@ -80,21 +38,20 @@ export default function BlogsPage() {
 			{/* Main Grid */}
 			<div className="max-w-4xl flex flex-col justify-center mx-auto">
 				{blogs.map((post, index) => (
-					<div
-						key={index}
-						className="border-b border-gray-300 p-6 py-8 hover:shadow-md transition"
-					>
-						<h2 className="text-xl font-semibold mb-2">
-							<Link href={`/blogs/${post.slug}`} className="hover:text-primary">
+					<Link key={index} href={`/blogs/${post.slug}`}>
+						<div
+							className="border-b border-gray-300 p-6 py-8 hover:shadow-md transition"
+						>
+							<h2 className="text-xl font-semibold mb-2">
 								{post.title}
-							</Link>
-						</h2>
-						<div className="text-xs text-gray-500 mb-4">
-							Published: {new Date(post.publishedAt).toLocaleDateString()} ○ Updated:{" "}
-							{new Date(post.updatedAt).toLocaleDateString()}
+							</h2>
+							<div className="text-xs text-gray-500 mb-4">
+								Published: {new Date(post.publishedAt).toLocaleDateString()} ○ Updated:{" "}
+								{new Date(post.updatedAt).toLocaleDateString()}
+							</div>
+							<p className="text-sm text-gray-600">{post.summary}</p>
 						</div>
-						<p className="text-sm text-gray-600">{post.summary}</p>
-					</div>
+					</Link>
 				))}
 			</div>
 		</div>

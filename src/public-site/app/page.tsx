@@ -1,11 +1,18 @@
 import Link from "next/link";
 
+const latestBlogs = [
+	{
+		title: "How to write clean code?",
+		slug: "clean-code"
+	}
+]
+
 export default function Home() {
 	return (
 		<div className="h-full flex flex-1 gap-56 flex-col md:flex-row py-12">
 			<div className="flex-1 flex flex-col items-center justify-center gap-14">
 				<h1 className="text-4xl md:text-6xl font-extrabold text-center capitalize tracking-wider leading-snug">
-					Hey, I&rsquo;m <br/> Prabin Kumar Shrestha
+					Hey, I&rsquo;m <br /> Prabin Kumar Shrestha
 				</h1>
 				<p className="text-lg md:text-xl text-gray-600 max-w-3xl text-center tracking-wide">
 					I am a dedicated Software Engineer with a profound passion for the latest technology. My commitment to continuous learning drives my enthusiasm for overcoming challenges, and I strongly believe in sharing knowledge for community growth.
@@ -44,21 +51,13 @@ export default function Home() {
 				<div className="space-y-2 mt-4">
 					<p className="text-gray-500 uppercase text-xs tracking-wide">Latest from my blog</p>
 					<ul className="space-y-1 list-none">
-						<li>
-							<Link href="/blogs" className=" hover:underline">
-								Clean Architecture in .NET
-							</Link>
-						</li>
-						<li>
-							<Link href="/blogs" className=" hover:underline">
-								Mutation Testing
-							</Link>
-						</li>
-						<li>
-							<Link href="/blogs" className=" hover:underline">
-								B+ Tree Indexing in Database
-							</Link>
-						</li>
+						{latestBlogs.map((blog) => (
+							<li key={blog.slug}>
+								<Link href={`/blogs/${blog.slug}`} className=" hover:underline">
+									{blog.title}
+								</Link>
+							</li>
+						))}
 					</ul>
 				</div>
 			</div>
