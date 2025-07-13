@@ -2,7 +2,6 @@ import fs from 'fs';
 import path from 'path';
 import ReactMarkdown from 'react-markdown';
 
-
 export async function generateStaticParams() {
 	const postsDir = path.join(process.cwd(), 'posts');
 	const files = fs.readdirSync(postsDir);
@@ -17,12 +16,13 @@ function getPostContent(slug: string) {
 	return fs.readFileSync(filePath, 'utf8');
 }
 
-export default async function BlogPostPage({ params }: { params: { slug: string } }) {
-	const content = getPostContent(params.slug);
+export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
+	const { slug } = await params;
+	const content = getPostContent(slug);
 
 	return (
 		<div className="prose max-w-5xl mx-auto p-4 pt-10">
-			<ReactMarkdown >{content}</ReactMarkdown>
+			<ReactMarkdown>{content}</ReactMarkdown>
 		</div>
 	);
 }
