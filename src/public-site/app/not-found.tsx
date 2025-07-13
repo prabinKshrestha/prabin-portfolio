@@ -8,7 +8,7 @@ export default function NotFoundPage() {
 				|
 				<p className="">Page not found</p>
 			</div>
-			<p className="text-gray-600 mb-6">Sorry, we couldn't find the page you're looking for.</p>
+			<p className="text-gray-600 mb-6">Sorry, we couldn&apos;t find the page you&apos;re looking for.</p>
 			<Link
 				href="/"
 				className="inline-block bg-primary hover:bg-primary-dark text-white font-semibold px-6 py-3 rounded-md transition"
