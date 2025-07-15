@@ -1,5 +1,6 @@
-import { ArrowDownOnSquareIcon } from "@heroicons/react/24/outline";
+import { ArrowDownCircleIcon, CloudArrowDownIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
+import { PButton } from "@/app/ui";
 
 const SkillSet: Array<Array<string>> = [
 	["C#", ".NET"],
@@ -12,8 +13,8 @@ const SkillSet: Array<Array<string>> = [
 
 export default function Resume() {
 	return (
-		<>
-			<div className="h-full flex flex-1 gap-10 flex-col md:flex-row py-12">
+		<div className="h-full flex flex-1 gap-10 flex-col w-full items-center">
+			<div className="w-full flex-1 flex gap-10 flex-col md:flex-row py-12">
 				<div className="flex flex-col gap-12 justify-center ">
 					{/* Current Role */}
 					<div className="space-y-1">
@@ -82,11 +83,18 @@ export default function Resume() {
 						className="inline-flex items-center justify-center w-full md:w-auto gap-3 px-10 py-3 font-semibold text-white bg-primary rounded-md shadow-md hover:bg-primary-700 transition mt-4"
 						aria-label="Download Resume PDF"
 					>
-						<ArrowDownOnSquareIcon className="w-6 h-6" aria-hidden="true" />
+						<CloudArrowDownIcon className="w-6 h-6" aria-hidden="true" />
 						Download Now
 					</a>
 				</div>
 			</div>
-		</>
+
+			<div className="flex justify-center md:justify-start py-12">
+				<PButton variant="outlined" severity="secondary">
+					<ArrowDownCircleIcon className="w-6 h-6 mr-4" aria-hidden="true" />
+					View My Resume in Detail
+				</PButton>
+			</div>
+		</div>
 	);
 }
