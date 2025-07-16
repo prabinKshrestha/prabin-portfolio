@@ -1,6 +1,11 @@
+"use client"
+
 import { ArrowDownCircleIcon, CloudArrowDownIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
+import { useRef, useState } from "react";
+
 import { PButton } from "@/app/ui";
+import ResumeDetail from "./resume-detail";
 
 const SkillSet: Array<Array<string>> = [
 	["C#", ".NET"],
@@ -12,8 +17,18 @@ const SkillSet: Array<Array<string>> = [
 
 
 export default function Resume() {
+	const contentRef = useRef(null);
+	const [detailedResume, showDetailedResume] = useState(false);
+
+	const onDetailViewClick = () => {
+		showDetailedResume(true);
+		setTimeout(() => {
+			(contentRef.current as any).scrollIntoView({ behavior: "smooth" });
+		});
+	};
+
 	return (
-		<div className="h-full flex flex-1 gap-10 flex-col w-full items-center">
+		<div className="h-full flex-1 flex gap-10 flex-col w-full items-center">
 			<div className="w-full flex-1 flex gap-10 flex-col md:flex-row py-12">
 				<div className="flex flex-col gap-12 justify-center ">
 					{/* Current Role */}
@@ -90,10 +105,14 @@ export default function Resume() {
 			</div>
 
 			<div className="flex justify-center md:justify-start py-12">
-				<PButton variant="outlined" severity="secondary">
+				<PButton variant="outlined" severity="secondary" onClick={onDetailViewClick}>
 					<ArrowDownCircleIcon className="w-6 h-6 mr-4" aria-hidden="true" />
 					View My Resume in Detail
 				</PButton>
+			</div>
+
+			<div className={`${detailedResume ? '' : 'hidden'} h-screen w-full`} ref={contentRef}>
+				<ResumeDetail />
 			</div>
 		</div>
 	);
