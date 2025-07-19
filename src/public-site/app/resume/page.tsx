@@ -17,13 +17,13 @@ const SkillSet: Array<Array<string>> = [
 
 
 export default function Resume() {
-	const contentRef = useRef(null);
+	const contentRef = useRef<HTMLDivElement>(null);
 	const [detailedResume, showDetailedResume] = useState(false);
 
 	const onDetailViewClick = () => {
 		showDetailedResume(true);
 		setTimeout(() => {
-			(contentRef.current as any).scrollIntoView({ behavior: "smooth" });
+			contentRef.current?.scrollIntoView({ behavior: "smooth" });
 		});
 	};
 
