@@ -2,6 +2,10 @@ import Link from "next/link";
 
 const latestBlogs = [
 	{
+		title: "News Feed System Design",
+		slug: "news-feed-system-design"
+	},
+	{
 		title: "How to write clean code?",
 		slug: "clean-code"
 	}

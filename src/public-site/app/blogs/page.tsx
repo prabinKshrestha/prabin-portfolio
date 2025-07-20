@@ -11,6 +11,14 @@ type BlogPost = {
 
 const blogs: BlogPost[] = [
 	{
+		id: "2",
+		title: "News Feed System Design",
+		slug: "news-feed-system-design",
+		summary: "I'm passionate about system design, and while reading System Design Interview - An Insider's Guide by Alex, I decided to write my own take on the concepts. This helps me deepen my understanding and retain the ideas more effectively.",
+		publishedAt: "2025-07-20",
+		updatedAt: "2025-07-20",
+	},
+	{
 		id: "1",
 		title: "How to write clean code? Notes on book - Clean Code",
 		slug: "clean-code",
