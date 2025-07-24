@@ -29,3 +29,28 @@ Apache Cluster and Broker
 - Data persist for certain configuration times and gets deleted - default time is 1 week
 - You cannot change the offset even if data is auto deleted, it just keeps on increasing 
 - Order is guaranteed within the partition. Data across the partitions does not gurantee the order. 
+
+---
+
+## Producers
+
+**Overview**
+- producer writes data to the topics in the Kafka Broker
+- producer knows which Partition to write
+- partitions spreads across the Kafka Broker which is a server, and thus send data acts as the load balancer
+- **Key** is sent along with the message. If it is null, partition is selected in round robin order i.e. Partition 0, then Partition 1,  then Partition 2, ... and so on.  If key exists, then it will always select the same partition with the help of hashing
+- Key is generally passed if order is required. For example, if truck_id is passed as key, it will always select the same Partition and thus message will be always ordered because of incremental nature of the offset within the partition
+- key and values should be sent as the bytes to Kafka and consumer should also receive the message in bytes. Producer should serialize the data using Serializer and deserialize in the consumer end.
+
+**Anatomy**
+- Key - binary - nullable
+- Value - binary - nullable
+- compression type
+- headers - key value pair
+- partition and offset
+- timestamp - user or system set
+
+**Hashing**
+- **Producer Partioner Logic** takes the record and applies the logic to assign the partition
+- hashing is simply converting key to the partition 
+- by default murmur2 algorithm is used
