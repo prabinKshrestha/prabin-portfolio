@@ -54,3 +54,26 @@ Apache Cluster and Broker
 - **Producer Partioner Logic** takes the record and applies the logic to assign the partition
 - hashing is simply converting key to the partition 
 - by default murmur2 algorithm is used
+
+---
+
+## Consumers
+
+- they receive the message from the Kafka topic recognized by Topic
+    - follows pull model i.e. Kafka does not push, rather Consumer pull the message
+- one consumer can pull from the multiple partition or single partition
+- consumer knows which broker to select and if the broker fails it knows recovery like producer
+- data are read from offset from small offset value to bigger - incremental pattern
+
+**Consumer Deserializer** 
+- Deserialize the binary - byte - formatted key and value in the message to the formatted data. 
+- But, it is important to know that message serializer cannot be changed otherwise consumer will not know it. If serialization has to be changed, new message should be sent.
+
+**Consumer Group**
+- consumer pulls the data in a group
+- consumers within a consumer group, each assigned to different exclusive partition i.e P0, P1 to C1, P2 to C2 and P3, P4 to C3. 
+- consumer can be inactive i.e. if some is not assigned to consumer
+- consumers in different consumer group can bevassigned to the same topic and partition
+    - say truck_id gps message are streaming via Kafka. Consumers in one group would send sms while other would log the data
+    - should use consumer property group.id 
+
