@@ -41,6 +41,22 @@ Example, imagine an IOT system - Internet of Thing - many construction vehciles 
 - You cannot change the offset even if data is auto deleted, it just keeps on increasing 
 - Order is guaranteed within the partition. Data across the partitions does not gurantee the order. 
 
+### Topic Replication
+- it is suggested to have topic replication greater than 1, basically 2 or 3
+- even if one broker breaks down, other broker can still serve the data
+- replication happens at partition level
+- one main is called leader while other are called in-sync replicas (ISR)
+- producer only connects to the leader partition
+- consumer connects to leader by default but after 2.4 version of Kafka, consumer can configured to connect to the closest replica which improves latency
+- if broker 100, 101, and 103, and there is a Topic A. A-P01, A-P02 are two partitions of the topic. If replication is 2, then it can replicate the data like following, where l is leader and r is replica:
+    - Broker 100 => A-P01 (l) 
+    - Broker 101 => A-P01 (r), A-P02 (l)
+    - Broker 102 => A-P02 (r)
+- In above example, if Broker 101 is dead, then 100 and 102 can still server the data for partition 1 and 2. Remember that data is at partition level
+
+**Durability**
+- if replication factor is 3, then kafka can withstand 2 server loss
+- so for N factor, N-1 server loss
 
 ## Producers
 
@@ -64,6 +80,18 @@ Example, imagine an IOT system - Internet of Thing - many construction vehciles 
 - **Producer Partioner Logic** takes the record and applies the logic to assign the partition
 - hashing is simply converting key to the partition 
 - by default murmur2 algorithm is used
+
+**Acknowledgement**
+- Has three possible options
+    - ack=0
+        - do not wait for leader acknowledgement
+        - possible data loss
+    - ack=1
+        - waits for leader acknowledgement
+        - limited data loss
+    - ack=all
+        - waits for leader and all replicas acknowledgement
+        - no data loss
 
 
 ## Consumers
