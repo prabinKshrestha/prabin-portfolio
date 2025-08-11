@@ -2,6 +2,10 @@ import Link from "next/link";
 
 const latestBlogs = [
 	{
+		title: "Concept of Apache Kafka",
+		slug: 'apache-kafka-concepts'
+	}
+	{
 		title: "News Feed System Design",
 		slug: "news-feed-system-design"
 	},

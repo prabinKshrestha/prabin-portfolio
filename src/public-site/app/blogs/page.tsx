@@ -11,6 +11,14 @@ type BlogPost = {
 
 const blogs: BlogPost[] = [
 	{
+		id: "3",
+		title: "Concepts of Apache Kafka",
+		slug: "apache-kafka-concepts",
+		summary: "Apache Kafka has recently become very popular for data streaming. Many people also use it as a queuing and messaging platform, including for asynchronous communication. For example, imagine an IoT (Internet of Things) system with many construction vehicles operating in a construction zone for a company. We want to track each vehicle&apos;s movement, GPS location, activities, tire pressure, and other safety-related data. The goal is to log this information, visualize it later, and send notifications if any risks are detected. This creates a large amount of data, as each vehicle may send multiple types of data every few seconds (for example, every 10 seconds). Apache Kafka Streams can handle this kind of data flow efficiently.",
+		publishedAt: "2025-08-11",
+		updatedAt: "2025-08-11"
+	},
+	{
 		id: "2",
 		title: "News Feed System Design",
 		slug: "news-feed-system-design",
