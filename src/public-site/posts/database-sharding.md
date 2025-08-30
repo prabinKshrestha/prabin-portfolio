@@ -158,12 +158,6 @@ Sharding reduces DB bottlenecks, but caching improves **latency**:
 
 ---
 
-## Step 10: .NET Example
-
-Absolutely! Let’s create **Section 9** of your sharding blog, focusing on a **practical .NET + EF Core example**. I’ll write it in the **same blog style** as your news feed post so it integrates naturally.
-
----
-
 ## Step 10: Example — Implementing Sharding in .NET with EF Core
 
 At this point, we’ve covered the **concepts, strategies, and trade-offs** for database sharding. Now let’s see how this could look in code, using **.NET and Entity Framework Core** to dynamically route queries to the correct shard based on a shard key (e.g., `UserId`).
