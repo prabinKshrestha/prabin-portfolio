@@ -11,6 +11,14 @@ type BlogPost = {
 
 const blogs: BlogPost[] = [
 	{
+		id: "4",
+		title: "Database Sharding",
+		slug: "database-sharding",
+		summary: "Database sharding is a technique to horizontally scale large applications by splitting data across multiple databases, improving performance and reliability. Using a shard key and dynamic DbContext routing in .NET, queries can be directed to the appropriate shard seamlessly. Combined with caching and optional cross-shard aggregation, sharding enables scalable, cost-effective database architecture for high-volume systems.",
+		publishedAt: "2025-08-30",
+		updatedAt: "2025-08-11"
+	},
+	{
 		id: "3",
 		title: "Concepts of Apache Kafka",
 		slug: "apache-kafka-concepts",
