@@ -11,6 +11,14 @@ type BlogPost = {
 
 const blogs: BlogPost[] = [
 	{
+		id: "5",
+		title: "RabbitMQ: A Comprehensive Guide to Enterprise Messaging",
+		slug: "rabbit-mq-comprehensive-guide",
+		summary: "RabbitMQ is a message broker that enables applications to communicate asynchronously. Instead of Service A directly calling Service B, they exchange messages through RabbitMQ. If Service B is temporarily unavailable, the message waits safely in a queue until Service B is ready to process it.",
+		publishedAt: "2025-08-30",
+		updatedAt: "2025-08-11"
+	},
+	{
 		id: "4",
 		title: "Database Sharding",
 		slug: "database-sharding",
