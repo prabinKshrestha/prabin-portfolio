@@ -2253,6 +2253,7 @@ RabbitMQ is a powerful tool for building resilient, scalable distributed systems
 - Use quorum queues in clustered production environments
 
 Start with simple patterns (work queues, pub/sub) and add complexity as needed. Focus on reliability first, then optimize for performance. With proper configuration, RabbitMQ provides a robust foundation for asynchronous messaging in microservices architectures.
+
 ---
 
 **Credit**: This post was cleaned up and organized from my rough notes with help from LLM — but the thought process, steps, and structure reflect how I personally reason RabbitMQ.
