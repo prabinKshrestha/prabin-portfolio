@@ -2,7 +2,8 @@ import Link from "next/link";
 
 const latestBlogs = [
 	{
-		
+		title: "Notes on Patterns of Enterprise Application Architecture",
+		slug: "notes-on-patterns-of-enterprise-application-architecture"
 	},
 	{
 		title: "RabbitMQ: A Comprehensive Guide to Enterprise Messaging",
