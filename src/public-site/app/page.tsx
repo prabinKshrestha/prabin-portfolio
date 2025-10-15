@@ -2,6 +2,9 @@ import Link from "next/link";
 
 const latestBlogs = [
 	{
+		
+	},
+	{
 		title: "RabbitMQ: A Comprehensive Guide to Enterprise Messaging",
 		slug: 'rabbit-mq-comprehensive-guide'
 	},
